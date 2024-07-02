@@ -2,10 +2,10 @@
 module.exports = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{js,jsx}',
-    './components/**/*.{js,jsx}',
-    './app/**/*.{js,jsx}',
-    './src/**/*.{js,jsx}',
+    "./pages/**/*.{js,jsx}",
+    "./components/**/*.{js,jsx}",
+    "./app/**/*.{js,jsx}",
+    "./src/**/*.{js,jsx}",
   ],
   prefix: "",
   theme: {
@@ -71,7 +71,35 @@ module.exports = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
+      textShadow: {
+        sm: "0 1px 2px rgba(0, 0, 0, 0.5)",
+        md: "0 2px 4px rgba(0, 0, 0, 0.5)",
+        lg: "0 3px 6px rgba(0, 0, 0, 0.5)",
+        xl: "0 4px 8px rgba(0, 0, 0, 0.5)",
+      },
     },
   },
-  plugins: [require("tailwindcss-animate")],
-}
+  plugins: [
+    require("tailwindcss-animate"),
+    function ({ addUtilities }) {
+      addUtilities(
+        {
+          ".text-shadow-sm": {
+            textShadow: "0 1px 2px rgba(0, 0, 0, 0.5)",
+          },
+          ".text-shadow-md": {
+            textShadow: "0 2px 4px rgba(0, 0, 0, 0.5)",
+          },
+          ".text-shadow-lg": {
+            textShadow: "0 3px 6px rgba(0, 0, 0, 0.5)",
+          },
+          ".text-shadow-xl": {
+            textShadow: "0 4px 8px rgba(0, 0, 0, 0.5)",
+          },
+          // Add more custom utilities as needed
+        },
+        ["responsive", "hover"]
+      );
+    },
+  ],
+};

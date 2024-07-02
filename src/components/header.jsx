@@ -16,10 +16,10 @@ const Header = () => {
   const navigate = useNavigate();
   const user = true;
   return (
-    <nav className=" py4 flex justify-between items-center">
+    <nav className=" py4 flex justify-between items-center mt-4">
       <Link className="flex items-center" to="/">
         <img src="/link.png" className=" h-16" alt="logo" />
-        <h1 className=" font-bold text-2xl border-t border-r border-b p-2 border-green-500">
+        <h1 className=" font-bold text-2xl border-t border-r border-b p-2 border-green-500 text-shadow-sm  ">
           LinkClip
         </h1>
       </Link>
