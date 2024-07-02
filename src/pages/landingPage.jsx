@@ -6,18 +6,33 @@ import {
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const LandingPage = () => {
+  const [longUrl, setLongUrl] = useState();
+  const navigate = useNavigate();
+
+  function handleLink(e) {
+    e.preventDefault();
+    if (longUrl) navigate(`/auth?createNew=${longUrl}`);
+  }
+
   return (
     <div className=" flex flex-col items-center">
       <h2 className=" my-10 sm:my-16 text-3xl sm:text-6xl  lg:text-7xl text-white text-center  font-extrabold">
         Smart and Simple URL Shortening!
       </h2>
-      <form className=" sm:h-14 flex flex-col sm:flex-row w-full md:w-2/4 gap-2">
+      <form
+        onSubmit={handleLink}
+        className=" sm:h-14 flex flex-col sm:flex-row w-full md:w-2/4 gap-2"
+      >
         <Input
           type="url"
+          value={longUrl}
           placeholder="Enter your url"
           className="h-full flex-1 py-4 px-4"
+          onChange={(e) => setLongUrl(e.target.value)}
         />
         <Button className="h-full font-bold" type="submit" variant="green">
           Shorten
