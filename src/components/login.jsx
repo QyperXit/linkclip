@@ -6,6 +6,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { UrlState } from "@/context";
 import { login } from "@/db/apiAuth";
 import useFetch from "@/hooks/useFetch";
 import React, { useEffect, useState } from "react";
@@ -36,10 +37,12 @@ const Login = () => {
   }
 
   const { data, error, loading, fn: fnLogin } = useFetch(login, formData);
+  const { fetchUser } = UrlState();
 
   useEffect(() => {
     if (error === null && data) {
       navigate(`/dashboard?${longLink ? `createNew=${longLink}` : ""}`);
+      fetchUser;
     }
   }, [data, error]);
 
