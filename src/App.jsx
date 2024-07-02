@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
 import AppLayout from "./layouts/app-layout";
 import Auth from "./pages/auth";
@@ -38,9 +38,7 @@ function App() {
 
   return (
     <>
-      <div>
-        <h1 className=" underline text-2xl">test</h1>
-      </div>
+      <RouterProvider router={router} />
     </>
   );
 }
