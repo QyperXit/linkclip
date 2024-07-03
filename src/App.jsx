@@ -1,5 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
+import RequireAuth from "./components/require";
 import UrlProvider from "./context";
 import AppLayout from "./layouts/app-layout";
 import Auth from "./pages/auth";
@@ -19,7 +20,11 @@ function App() {
         },
         {
           path: "/dashboard",
-          element: <Dashboard />,
+          element: (
+            <RequireAuth>
+              <Dashboard />
+            </RequireAuth>
+          ),
         },
         {
           path: "/auth",
@@ -27,7 +32,11 @@ function App() {
         },
         {
           path: "/link/:id",
-          element: <Link />,
+          element: (
+            <RequireAuth>
+              <Link />
+            </RequireAuth>
+          ),
         },
         {
           path: "/:id",
