@@ -48,8 +48,10 @@ const Header = () => {
                 </DropdownMenuLabel>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem>
-                  <Link2Icon className="mr-2 h-4 w-4" />
-                  My Urls
+                  <Link to="/dashboard" className="flex">
+                    <Link2Icon className="mr-2 h-4 w-4" />
+                    My Urls
+                  </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
                   <LogOut className="mr-2 h-4 w-4" />
