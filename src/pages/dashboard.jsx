@@ -1,4 +1,6 @@
+import CreateLink from "@/components/createLink";
 import Error from "@/components/error";
+import LinkCard from "@/components/linkCard";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -28,6 +30,10 @@ const Dashboard = () => {
     fnUrls();
   }, []);
 
+  const filteredUrls = urls?.filter((url) =>
+    url.title.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   useEffect(() => {
     if (urls?.length) fnClicks();
   }, [urls?.length]);
@@ -44,21 +50,19 @@ const Dashboard = () => {
             <CardTitle>Link History</CardTitle>
           </CardHeader>
           <CardContent>
-            <p>0</p>
+            <p>{urls?.length}</p>
           </CardContent>
         </Card>
         <Card>
           <CardHeader>
             <CardTitle>Total Clicks</CardTitle>
           </CardHeader>
-          <CardContent>
-            <p>0</p>
-          </CardContent>
+          <CardContent>{/* <p>{clicks.length}</p> */}</CardContent>
         </Card>
       </div>
       <div className=" flex justify-between">
         <h1 className=" text-4xl  font-extrabold">My Urls</h1>
-        <Button>Create Url</Button>
+        <CreateLink />
       </div>
       <div className=" relative ">
         <Input
@@ -70,6 +74,9 @@ const Dashboard = () => {
         <Filter className=" absolute top-2  right-2 p-1" />
       </div>
       {error && <Error message={error?.message} />}
+      {(filteredUrls || []).map((url, i) => (
+        <LinkCard key={i} url={url} fetchUrls={fnUrls} />
+      ))}
     </div>
   );
 };
