@@ -56,7 +56,9 @@ const LinkCard = ({ url, fetchUrls }) => {
         <Button
           variant="ghost"
           onClick={() =>
-            navigator.clipboard.writeText(`https://trimrr.in/${url?.short_url}`)
+            navigator.clipboard.writeText(
+              `https://linkclip.in/${url?.short_url}`
+            )
           }
         >
           <Copy />
@@ -67,7 +69,7 @@ const LinkCard = ({ url, fetchUrls }) => {
         <Button
           variant="ghost"
           onClick={() => fnDelete().then(() => fetchUrls())}
-          //   disable={loadingDelete}
+          disable={loadingDelete}
         >
           {loadingDelete ? <BeatLoader size={5} color="white" /> : <Trash />}
         </Button>
