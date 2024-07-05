@@ -39,10 +39,10 @@ const Dashboard = () => {
   }, [urls?.length]);
 
   return (
-    <div className=" flex flex-col gap-5 mt-6">
+    <div className=" flex flex-col gap-5 mt-8">
       {loading ||
         (loadingClicks && (
-          <BarLoader className="mb-4 mt-4" width={"100%"} color="#36d7b7" />
+          <BarLoader className="mb-4 mt-8" width={"100%"} color="#36d7b7" />
         ))}
       <div className=" grid grid-cols-2 gap-4">
         <Card>
