@@ -57,7 +57,9 @@ const Dashboard = () => {
           <CardHeader>
             <CardTitle>Total Clicks</CardTitle>
           </CardHeader>
-          <CardContent>{/* <p>{clicks.length}</p> */}</CardContent>
+          <CardContent>
+            <p>{clicks?.length}</p>
+          </CardContent>
         </Card>
       </div>
       <div className=" flex justify-between">
