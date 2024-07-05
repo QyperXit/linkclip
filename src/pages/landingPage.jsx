@@ -35,7 +35,7 @@ const LandingPage = () => {
           onChange={(e) => setLongUrl(e.target.value)}
         />
         <Button className="h-full font-bold" type="submit" variant="green">
-          Shorten
+          Shrink
         </Button>
       </form>
       <div className=" w-full my-11 md:px-11 overflow-hidden relative">
@@ -50,9 +50,11 @@ const LandingPage = () => {
       </div>
       <Accordion type="multiple" collapsible className="w-full my-11 md:px-11">
         <AccordionItem value="item-1">
-          <AccordionTrigger>How it works</AccordionTrigger>
+          <AccordionTrigger className=" font-semibold">
+            How it works
+          </AccordionTrigger>
           <AccordionContent>
-            <p>
+            <p className=" py-2">
               A URL shortener works by taking a long URL and generating a
               shorter, unique URL that redirects to the original address. When
               users click on the shortened link, they are redirected to the
@@ -63,9 +65,11 @@ const LandingPage = () => {
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-2">
-          <AccordionTrigger>Benefits of using a URL shortener</AccordionTrigger>
+          <AccordionTrigger className=" font-semibold">
+            Benefits of using a URL shortener
+          </AccordionTrigger>
           <AccordionContent>
-            <ul>
+            <ul className=" flex flex-col gap-1">
               <li>
                 Easy to share: Shorter links are easier to share, especially on
                 platforms with character limits.
@@ -86,9 +90,11 @@ const LandingPage = () => {
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-3">
-          <AccordionTrigger>Is it secure?</AccordionTrigger>
+          <AccordionTrigger className=" font-semibold">
+            Is it secure?
+          </AccordionTrigger>
           <AccordionContent>
-            <p>
+            <p className=" py-2">
               Yes, URL shorteners are generally secure, but it's important to
               use reputable services. They often include features like spam and
               phishing protection. However, users should always be cautious and

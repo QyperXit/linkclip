@@ -1,3 +1,4 @@
+import Footer from "@/components/footer";
 import Header from "@/components/header";
 import React from "react";
 import { Outlet } from "react-router-dom";
@@ -10,9 +11,10 @@ const AppLayout = () => {
         <Outlet />
       </main>
 
-      <footer className=" p-10 text-center bg-gray-800 mt-10 text-white">
+      {/* <footer className=" p-10 text-center bg-gray-800 mt-10 text-white">
         Developer @Chaun
-      </footer>
+      </footer> */}
+      <Footer />
     </div>
   );
 };
