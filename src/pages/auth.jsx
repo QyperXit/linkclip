@@ -15,6 +15,7 @@ const Auth = () => {
   useEffect(() => {
     if (isAuthenticated && !loading) {
       navigate(`/dashboard?${longLink ? `createNew=${longLink}` : ""}`);
+      console.log("it works!!!!");
     }
   }, [isAuthenticated, loading]);
 
