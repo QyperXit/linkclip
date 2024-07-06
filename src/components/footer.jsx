@@ -26,7 +26,7 @@ const Footer = () => {
             family.
           </p>
           <p className="text-gray-500">
-            © Ducci Productions. 2022 Ducci. All rights reserved.
+            © Ducci Productions. 2024 Ducci. All rights reserved.
           </p>
         </div>
 
