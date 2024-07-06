@@ -75,11 +75,11 @@ const Link = () => {
             {url?.title}
           </span>
           <a
-            href={`https://linkclip.in/${link}`}
+            href={`https://linkclip.netlify.app/${link}`}
             target="_blank"
             className="text-3xl sm:text-4xl text-blue-400 font-bold hover:underline cursor-pointer"
           >
-            https://linkclip.in/{link}
+            https://linkclip.netlify.app/{link}
           </a>
           <a
             href={url?.original_url}
@@ -96,7 +96,9 @@ const Link = () => {
             <Button
               variant="ghost"
               onClick={() =>
-                navigator.clipboard.writeText(`https://linkclip.in/${link}`)
+                navigator.clipboard.writeText(
+                  `https://linkclip.netlify.app/${link}`
+                )
               }
             >
               <Copy />
